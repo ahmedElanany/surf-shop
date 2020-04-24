@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js"></script>
+	<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/post-show.css">
+	<link rel="stylesheet" href="/stylesheets/starability-basic.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	  <script src="https://kit.fontawesome.com/cc8c3f3eba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<% include ../partials/navbar %>
+	<% include ../partials/flash-messages %>
+	
+	<%- body -%>
+	
+	<script>
+		var post = <%- JSON.stringify(post) %>;
+		var mapBoxToken = "<%= mapBoxToken %>";
+	</script>
+	<script src="/javascripts/post-show.js"></script>
+</body>
+</html>
